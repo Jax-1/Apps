@@ -65,23 +65,16 @@ public class ${table.controllerName} {
                                 @ApiParam(name="length",value="页大小",required=true,defaultValue = "10")Integer length,
                                 @ApiParam(name="pageNo",value="页数",required=true,defaultValue = "1")Integer pageNo) {
             ProcessResult<${entity}> resJson=new ProcessResult<>();
-            if(param.getBeginDate() == null) {
-                if (param.getEndDate() == null) {
-                    param.setBeginDate(getMonthFirstDay(new Date()));
-                } else { param.setBeginDate(getMonthFirstDay(param.getEndDate())); }
-            }
-            if(param.getEndDate() == null) {
-                param.setEndDate(getMonthLastDay(new Date()));
-            }
+
             try {
                 Page<${entity}> page=new Page<${entity}>(pageNo,length);
                 ${table.entityPath}Service.selectPageWithParam(page, param);
                 resJson.setRecordsTotal(page.getTotal());
-                resJson.setData(page.getRecords());
-                resJson.setSuccess(true);
+                resJson.setDatas(page.getRecords());
+                resJson.setRes(true);
             }catch (Exception e){
-                resJson.setSuccess(false);
-                resJson.setMessage("异常信息:"+e.getClass().getName());
+                resJson.setRes(false);
+                resJson.setResult("异常信息:"+e.getClass().getName());
                 logger.info("异常信息:{}",e.getMessage());
             }
             return resJson;
@@ -100,10 +93,10 @@ public class ${table.controllerName} {
             try {
                 ${entity} param= ${table.entityPath}Service.selectOneByObj(id);
                 resJson.setData(param);
-                resJson.setSuccess(true);
+                resJson.setRes(true);
             }catch (Exception e) {
-                resJson.setSuccess(false);
-                resJson.setMessage("异常信息:"+e.getClass().getName());
+                resJson.setRes(false);
+                resJson.setResult("异常信息:"+e.getClass().getName());
                 logger.info("异常信息:{}",e.getMessage());
             }
             return resJson;
@@ -120,10 +113,10 @@ public class ${table.controllerName} {
     public ProcessResult<${entity}> delete${entity}ById(@ApiParam(name="id",value="${entity}ID",required=true)Long id) {
             ProcessResult<${entity}> resJson = new ProcessResult<>();
             try{
-                resJson.setSuccess(${table.entityPath}Service.deleteById(id));
+                resJson.setRes(${table.entityPath}Service.deleteById(id));
             }catch (Exception e) {
-                resJson.setSuccess(false);
-                resJson.setMessage("异常信息:"+e.getClass().getName());
+                resJson.setRes(false);
+                resJson.setResult("异常信息:"+e.getClass().getName());
                 logger.info("异常信息:{}",e.getMessage());
             }
             return resJson;
@@ -140,10 +133,10 @@ public class ${table.controllerName} {
     public ProcessResult<${entity}> update${entity}ById(@ApiParam(name="${entity}",value="${entity} 实体类")${entity} param) {
             ProcessResult<${entity}> resJson = new ProcessResult<>();
             try{
-                resJson.setSuccess(${table.entityPath}Service.updateById(param));
+                resJson.setRes(${table.entityPath}Service.updateById(param));
             }catch (Exception e) {
-                resJson.setSuccess(false);
-                resJson.setMessage("异常信息:"+e.getClass().getName());
+                resJson.setRes(false);
+                resJson.setResult("异常信息:"+e.getClass().getName());
                 logger.info("异常信息:{}",e.getMessage());
             }
             return resJson;
@@ -160,10 +153,10 @@ public class ${table.controllerName} {
     public ProcessResult<${entity}> add${entity}(@ApiParam(name="${entity}",value="${entity} 实体类")${entity} param) {
             ProcessResult<${entity}> resJson = new ProcessResult<>();
             try{
-                resJson.setSuccess(${table.entityPath}Service.insert(param));
+                resJson.setRes(${table.entityPath}Service.insert(param));
             }catch (Exception e) {
-                resJson.setSuccess(false);
-                resJson.setMessage("异常信息:"+e.getClass().getName());
+                resJson.setRes(false);
+                resJson.setResult("异常信息:"+e.getClass().getName());
                 logger.info("异常信息:{}",e.getMessage());
             }
             return resJson;

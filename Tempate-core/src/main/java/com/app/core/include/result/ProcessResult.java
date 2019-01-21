@@ -12,7 +12,7 @@ public class ProcessResult<T> implements Serializable {
     /**
      * 结果
      */
-    private int res;
+    private Boolean res;
 
     /**
      * 结果
@@ -37,35 +37,45 @@ public class ProcessResult<T> implements Serializable {
     /**
      * 对象
      */
-    private T obj;
+    private T data;
 
     /**
      * 结果集
      */
-    private List<T> list;
+    private List<T> datas;
+
+    private int pageNo;//当前页
+
+    private int pageSize;//条数
+
+    private long total;//总条数
+
+    private int pages;//总页面数目
+
+    private long recordsTotal;
 
     public ProcessResult(){
-        this.res=SystemCode.FAILURE;
+        this.res=false;
         this.msg= MessageUtil.getMsgByLan(MsgPoolCode.FAILURE);
     }
     @SuppressWarnings("rawtypes")
     public static ProcessResult success(ProcessResult rocessResult) {
-        rocessResult.setRes(SystemCode.SUCCESS);
+        rocessResult.setRes(true);
         rocessResult.setMsg(MessageUtil.getMsgByLan(MsgPoolCode.SUCCESS));
         return rocessResult;
     }
-    public ProcessResult(int res){
+    public ProcessResult(Boolean res){
         this.res=res;
     }
-    public ProcessResult(int res,String result){
+    public ProcessResult(Boolean res,String result){
         this.res=res;
         this.result=result;
     }
-    public int getRes() {
+    public Boolean getRes() {
         return res;
     }
 
-    public void setRes(int res) {
+    public void setRes(Boolean res) {
         this.res = res;
     }
 
@@ -93,20 +103,20 @@ public class ProcessResult<T> implements Serializable {
         this.result = result;
     }
 
-    public T getObj() {
-        return obj;
+    public T getData() {
+        return data;
     }
 
-    public void setObj(T obj) {
-        this.obj = obj;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public List<T> getList() {
-        return list;
+    public List<T> getDatas() {
+        return datas;
     }
 
-    public void setList(List<T> list) {
-        this.list = list;
+    public void setDatas(List<T> datas) {
+        this.datas = datas;
     }
 
     public String getPrivateKey() {
@@ -115,5 +125,45 @@ public class ProcessResult<T> implements Serializable {
 
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
+    }
+
+    public int getPageNo() {
+        return pageNo;
+    }
+
+    public void setPageNo(int pageNo) {
+        this.pageNo = pageNo;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public long getTotal() {
+        return total;
+    }
+
+    public void setTotal(long total) {
+        this.total = total;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public long getRecordsTotal() {
+        return recordsTotal;
+    }
+
+    public void setRecordsTotal(long recordsTotal) {
+        this.recordsTotal = recordsTotal;
     }
 }
