@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apps" />
+        <module name="back-stage" />
+        <module name="eureka" />
+        <module name="spring-boot-starter-druid" />
+        <module name="spring-boot-starter-swagger" />
+        <module name="template-core" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Apps" target="1.5" />
+      <module name="apps" target="1.8" />
+      <module name="back-stage" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="framework" target="1.5" />
+      <module name="parent-project" target="1.8" />
+      <module name="spring-boot-starter-druid" target="1.8" />
+      <module name="spring-boot-starter-swagger" target="1.8" />
+      <module name="template-core" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

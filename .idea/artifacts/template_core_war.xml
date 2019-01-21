@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="template-core:war">
+    <output-path>$PROJECT_DIR$/Tempate-core/target</output-path>
+    <root id="archive" name="Tempate-core.war">
+      <element id="artifact" artifact-name="template-core:war exploded" />
+    </root>
+  </artifact>
+</component>

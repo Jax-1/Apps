@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Apps.iml" filepath="$PROJECT_DIR$/Apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/apps.iml" filepath="$PROJECT_DIR$/app/apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-stage/back-stage.iml" filepath="$PROJECT_DIR$/back-stage/back-stage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka server/eureka.iml" filepath="$PROJECT_DIR$/eureka server/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent/parent-project.iml" filepath="$PROJECT_DIR$/parent/parent-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/spring-boot-starter-druid/spring-boot-starter-druid.iml" filepath="$PROJECT_DIR$/framework/spring-boot-starter-druid/spring-boot-starter-druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/spring-boot-starter-swagger/spring-boot-starter-swagger.iml" filepath="$PROJECT_DIR$/framework/spring-boot-starter-swagger/spring-boot-starter-swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tempate-core/template-core.iml" filepath="$PROJECT_DIR$/Tempate-core/template-core.iml" />
+    </modules>
+  </component>
+</project>

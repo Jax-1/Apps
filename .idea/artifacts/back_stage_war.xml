@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="back-stage:war">
+    <output-path>$PROJECT_DIR$/back-stage/target</output-path>
+    <root id="archive" name="dbshop.war">
+      <element id="artifact" artifact-name="back-stage:war exploded" />
+    </root>
+  </artifact>
+</component>
