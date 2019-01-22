@@ -1,6 +1,9 @@
 package com.app.core.include.basic;
 
 
+import com.baomidou.mybatisplus.activerecord.Model;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +11,10 @@ import java.util.Date;
  *
  * @author Jang
  */
-public class IBaseBean {
+public class IBaseBean extends Model {
+
+    private static final long serialVersionUID = 1L;
+
     private int id;
     private String name;
     private Boolean delete;
@@ -18,8 +24,10 @@ public class IBaseBean {
 
     private String table_name;
 
-
-
+    @Override
+    public  Serializable pkVal(){
+        return this.id;
+    }
     public int getId() {
         return id;
     }

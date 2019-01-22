@@ -68,7 +68,7 @@ public class ${table.controllerName} {
 
             try {
                 Page<${entity}> page=new Page<${entity}>(pageNo,length);
-                ${table.entityPath}Service.selectPageWithParam(page, param);
+                ${table.entityPath}Service.selectPage(page, param);
                 resJson.setRecordsTotal(page.getTotal());
                 resJson.setDatas(page.getRecords());
                 resJson.setRes(true);

@@ -120,16 +120,16 @@ public class MysqlGenerator {
                         // 自定义实体父类
                          .setSuperEntityClass("com.app.core.include.basic.IBaseBean")
                         // 自定义实体，公共字段
-                        .setSuperEntityColumns(new String[]{"id", "name"})
+                        .setSuperEntityColumns(new String[]{"id", "name","delete","date_modified","date_entered","created_by"})
                         .setTableFillList(tableFillList)
                         // 自定义 dao 父类
-//                        .setSuperMapperClass("com.lgq.boot.base.BaseDao")
+                        .setSuperMapperClass("com.app.core.include.mapper.IBaseMapper")
 //                        // 自定义 service 父类
-//                        .setSuperServiceClass("com.lgq.boot.base.BaseService")
+                        .setSuperServiceClass("com.app.core.include.service.IBService")
 //                        // 自定义 service 实现类父类
-//                        .setSuperServiceImplClass("com.lgq.boot.base.BaseServiceImpl")
+                        .setSuperServiceImplClass("com.app.core.include.service.impl.IBServiceImpl")
 //                        // 自定义 controller 父类
-//                        .setSuperControllerClass("com.lgq.boot.base.BaseController")
+                        .setSuperControllerClass("com.app.core.include.controller.IController")
 
                 // 【实体】是否生成字段常量（默认 false）
                 // public static final String ID = "test_id";
