@@ -1,6 +1,7 @@
 package com.app.core.include.basic;
 
 
+import com.app.core.include.page.IBaseWrapper;
 import com.baomidou.mybatisplus.activerecord.Model;
 
 import java.io.Serializable;
@@ -74,5 +75,11 @@ public class IBaseBean extends Model {
 
     public void setCreated_by(int created_by) {
         this.created_by = created_by;
+    }
+
+    public IBaseWrapper<IBaseBean> getPageWrapper(){
+        IBaseWrapper<IBaseBean> iBaseWrapper=new IBaseWrapper<IBaseBean>();
+        iBaseWrapper.eq("id",this.id);
+        return iBaseWrapper;
     }
 }

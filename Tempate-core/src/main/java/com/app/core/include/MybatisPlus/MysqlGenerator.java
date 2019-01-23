@@ -183,6 +183,7 @@ public class MysqlGenerator {
                         .setService("")
                         .setServiceImpl("")
 
+
                         .setController("/template/controller.java.vm")
                         .setEntity("/template/entity.java.vm")
                         .setMapper("/template/mapper.java.vm")
