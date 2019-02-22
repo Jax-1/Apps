@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springbootmybatisplus.mht.dao.SysUserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.springbootmybatisplus.mht.entity.SysUserInfo">
+    <result column="id" property="id" />
+    <result column="name" property="name" />
+        <result column="user_name" property="userName" />
+        <result column="Sex" property="Sex" />
+        <result column="Phone" property="Phone" />
+        <result column="email" property="email" />
+        <result column="qq" property="qq" />
+        <result column="address_province" property="addressProvince" />
+        <result column="address_city" property="addressCity" />
+        <result column="address_area" property="addressArea" />
+        <result column="address_street" property="addressStreet" />
+        <result column="headimgurl" property="headimgurl" />
+        <result column="Create_at" property="createAt" />
+        <result column="Update_time" property="updateTime" />
+        <result column="LastSign_time" property="lastsignTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+id,
+name,
+        user_name AS userName, Sex, Phone, email, qq, address_province AS addressProvince, address_city AS addressCity, address_area AS addressArea, address_street AS addressStreet, headimgurl, Create_at AS createAt, Update_time AS updateTime, LastSign_time AS lastsignTime
+    </sql>
+
+</mapper>

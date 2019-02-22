@@ -2,7 +2,10 @@ package com.app.core.include.basic;
 
 
 import com.app.core.include.page.IBaseWrapper;
+import com.app.core.include.page.WhereType;
+import com.app.core.include.page.WhereTypeEnum;
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,6 +20,7 @@ public class IBaseBean extends Model {
     private static final long serialVersionUID = 1L;
 
     private int id;
+    @WhereType(type = WhereTypeEnum.LIKE)
     private String name;
     private Boolean delete;
     private Date date_modified;
@@ -77,9 +81,9 @@ public class IBaseBean extends Model {
         this.created_by = created_by;
     }
 
-    public IBaseWrapper<IBaseBean> getPageWrapper(){
-        IBaseWrapper<IBaseBean> iBaseWrapper=new IBaseWrapper<IBaseBean>();
-        iBaseWrapper.eq("id",this.id);
-        return iBaseWrapper;
+    public Wrapper getPageWrapper(){
+
+        IBaseWrapper iBaseWrapper=new IBaseWrapper<IBaseBean>(this);
+        return iBaseWrapper.execute();
     }
 }
